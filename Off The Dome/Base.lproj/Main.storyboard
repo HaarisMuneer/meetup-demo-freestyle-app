@@ -34,19 +34,39 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7m8-yc-KRZ">
-                                <rect key="frame" x="266" y="328.5" width="68" height="33.5"/>
+                                <rect key="frame" x="266" y="329" width="68" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tdc-BT-6Ts">
-                                <rect key="frame" x="264.5" y="427" width="71" height="46"/>
+                                <rect key="frame" x="265" y="427" width="71" height="46"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <state key="normal" title="Reset">
                                     <color key="titleColor" red="1" green="0.15955735254204284" blue="0.16552571791965909" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="resetButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sHW-pp-zAg"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQY-Yy-ORl">
+                                <rect key="frame" x="225" y="58" width="151" height="28"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kE8-NE-V52">
+                                <rect key="frame" x="257" y="124" width="86" height="30"/>
+                                <state key="normal" title="every 2 lines"/>
+                                <connections>
+                                    <action selector="everyTwoLinesTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eZe-WA-e1e"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eft-mN-L2P">
+                                <rect key="frame" x="282" y="153" width="37" height="30"/>
+                                <state key="normal" title="Stop!"/>
+                                <connections>
+                                    <action selector="stopIntervalTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dN3-sR-29K"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -62,6 +82,7 @@
                     </view>
                     <connections>
                         <outlet property="bpmView" destination="7m8-yc-KRZ" id="T4A-FJ-TeK"/>
+                        <outlet property="randomWordToIncorporateLabel" destination="HQY-Yy-ORl" id="FqY-e4-zwK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
