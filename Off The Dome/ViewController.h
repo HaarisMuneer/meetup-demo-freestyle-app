@@ -17,5 +17,16 @@
 @property (nonatomic, strong) IBOutlet UILabel *bpmView;
 @property (nonatomic, assign) CGFloat averageTimeBetweenButtonPress;
 
+@property (weak, nonatomic) IBOutlet UILabel *randomWordToIncorporateLabel;
+
+//array property to create with text file
+@property (nonatomic, strong) NSMutableArray *wordsToIncorporateArray;
+@property (nonatomic, strong)NSTimer *intervalTimer;
+
+
+//button for every two lines
+- (IBAction)everyTwoLinesTapped:(id)sender;
+- (IBAction)stopIntervalTapped:(id)sender;
+
 @end
 

@@ -20,6 +20,16 @@
     [super viewDidLoad];
     self.timeBetweenPresses = [[NSMutableArray alloc]init];
     // Do any additional setup after loading the view, typically from a nib.
+
+  
+  //add text file of words to words array
+  self.wordsToIncorporateArray= [[NSMutableArray alloc]init];
+  NSString *filePath = [[NSBundle mainBundle] pathForResource:@"wordlist" ofType:@"txt"];
+  NSString *fileContents = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:NULL];
+  for (NSString *line in [fileContents componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]]) {
+    [self.wordsToIncorporateArray addObject:line];
+  }
+  NSLog(@"%@",self.wordsToIncorporateArray);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -62,5 +72,34 @@
         self.bpmView.text = [NSString stringWithFormat:@"%lu BPM", self.bpm];
     }
 }
+
+
+
+//right now next two methods run so that the label updates every three seconds with a new word ad infinitum
+//need to update so that button sends message to timer to set time interval, then timer starts when song starts
+//then remove stop button and relocate logic so that set to end when song ends
+
+- (IBAction)everyTwoLinesTapped:(id)sender {
+
+  self.intervalTimer = [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(runEveryTwoLines) userInfo:nil repeats:YES];
+  
+}
+
+- (IBAction)stopIntervalTapped:(id)sender
+{
+  if (self.intervalTimer) {
+    [self.intervalTimer invalidate];
+    self.intervalTimer = nil;
+  }
+}
+
+-(void)runEveryTwoLines
+{
+  NSUInteger random = arc4random_uniform((u_int32_t) self.wordsToIncorporateArray.count);
+  
+  
+  self.randomWordToIncorporateLabel.text = self.wordsToIncorporateArray[random];
+}
+
 
 @end
