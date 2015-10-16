@@ -1,0 +1,450 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		14F6495880B31190943B7D0CEEF51BB7 /* SCLPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE778CA4A596A2A67C0EC6E9FBD34A5C /* SCLPlayerViewController.m */; };
+		1D32CB701132276EF4E1EF60657812F6 /* Pods-Off The Dome-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D54D51B2793091189FEA507142B2360 /* Pods-Off The Dome-dummy.m */; };
+		3633732E01B62A0FF8F152A2FEA7EE32 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3B7BDF5CE5CB8F095FE12DA55D9A9BB /* UIKit.framework */; };
+		9BB4730E6D2D95DDD9A7ED26C2F0159D /* SCLPlayer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D697D4E868FF8A7CA00AA4D6D09E1B34 /* SCLPlayer-dummy.m */; };
+		C1A53C6479851B27C50B86FFEE4FE4FE /* SCLPlayerViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A2CC4EB10AF85C82C79E1E782A95AF2 /* SCLPlayerViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C56DA84FB6D9CA5C3896DC2AA3E54E34 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E7E5AF37923BFA48D6994B9BFC6535F /* Foundation.framework */; };
+		C8C8F87B738EB30D1B7A6945F3FBD682 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E7E5AF37923BFA48D6994B9BFC6535F /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E497564E00C0277D8AE94C6287009818 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 93395B42A8B96C43AAF999F5DB1A8FDE;
+			remoteInfo = SCLPlayer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		087FEA597810DD496A58AC6BB9639EB3 /* Pods-Off The Dome-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Off The Dome-acknowledgements.markdown"; sourceTree = "<group>"; };
+		0A2CC4EB10AF85C82C79E1E782A95AF2 /* SCLPlayerViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SCLPlayerViewController.h; path = Pod/Classes/SCLPlayerViewController.h; sourceTree = "<group>"; };
+		0F11C87FE0E4A84A5AE35BEA2B482812 /* soundcloudPlayer.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = soundcloudPlayer.html; path = Pod/Assets/soundcloudPlayer.html; sourceTree = "<group>"; };
+		2E507B62A1CCF93BFD0925ACB0EFDA44 /* Pods-Off The Dome-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Off The Dome-frameworks.sh"; sourceTree = "<group>"; };
+		2EA9DFC709D8255D7D0354E5699C0A1C /* Pods-Off The Dome-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Off The Dome-acknowledgements.plist"; sourceTree = "<group>"; };
+		30F7CA756BACFAEB91D3416BCB7909DE /* Pods-Off The Dome.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Off The Dome.release.xcconfig"; sourceTree = "<group>"; };
+		4D54D51B2793091189FEA507142B2360 /* Pods-Off The Dome-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Off The Dome-dummy.m"; sourceTree = "<group>"; };
+		5506B77E220BCC42A504FE0953B04A7A /* libSCLPlayer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSCLPlayer.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		697F3D6F9A0A65A5E2C81B38FB04BABE /* Pods-Off The Dome-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Off The Dome-resources.sh"; sourceTree = "<group>"; };
+		6E7E5AF37923BFA48D6994B9BFC6535F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		94AC243DE8F09A2AF6B760DA74E3DA7F /* Pods-Off The Dome.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Off The Dome.debug.xcconfig"; sourceTree = "<group>"; };
+		9B5568FD49921F82B8A71D23429BED6E /* SCLPlayer-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SCLPlayer-prefix.pch"; sourceTree = "<group>"; };
+		AE778CA4A596A2A67C0EC6E9FBD34A5C /* SCLPlayerViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SCLPlayerViewController.m; path = Pod/Classes/SCLPlayerViewController.m; sourceTree = "<group>"; };
+		B7FB87B27EE5C210A5B3C73604BF7F13 /* SCLPlayer.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SCLPlayer.xcconfig; sourceTree = "<group>"; };
+		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		C3B7BDF5CE5CB8F095FE12DA55D9A9BB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		D697D4E868FF8A7CA00AA4D6D09E1B34 /* SCLPlayer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SCLPlayer-dummy.m"; sourceTree = "<group>"; };
+		EBF2370BC0B40A862DEC51FC08FBE96A /* libPods-Off The Dome.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Off The Dome.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		21567C403DA80DC3B17721FAE08E1FAC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8C8F87B738EB30D1B7A6945F3FBD682 /* Foundation.framework in Frameworks */,
+				3633732E01B62A0FF8F152A2FEA7EE32 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DF8234AA0DD087539F1B5492CFD02EE9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C56DA84FB6D9CA5C3896DC2AA3E54E34 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		18340F12838DEE43507667CC74401EB1 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6E7E5AF37923BFA48D6994B9BFC6535F /* Foundation.framework */,
+				C3B7BDF5CE5CB8F095FE12DA55D9A9BB /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		40297AFCC867ACC7C8F94E7D1FDCB379 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6F5696551543A804174F6AF32A2C7261 /* SCLPlayer */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				18340F12838DEE43507667CC74401EB1 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6F5696551543A804174F6AF32A2C7261 /* SCLPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				0A2CC4EB10AF85C82C79E1E782A95AF2 /* SCLPlayerViewController.h */,
+				AE778CA4A596A2A67C0EC6E9FBD34A5C /* SCLPlayerViewController.m */,
+				DB503BC6DA33EB7F627B33C65954ABE2 /* Resources */,
+				DB1D1773A3F82AEEF88CCB2B4BF37915 /* Support Files */,
+			);
+			path = SCLPlayer;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				40297AFCC867ACC7C8F94E7D1FDCB379 /* Pods */,
+				FF24483A2AFE3556D8973E0938B93959 /* Products */,
+				A805EB05C765C725436EF05CA3D80A51 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		A805EB05C765C725436EF05CA3D80A51 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C475375606D195BE37478A874283DB20 /* Pods-Off The Dome */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		C475375606D195BE37478A874283DB20 /* Pods-Off The Dome */ = {
+			isa = PBXGroup;
+			children = (
+				087FEA597810DD496A58AC6BB9639EB3 /* Pods-Off The Dome-acknowledgements.markdown */,
+				2EA9DFC709D8255D7D0354E5699C0A1C /* Pods-Off The Dome-acknowledgements.plist */,
+				4D54D51B2793091189FEA507142B2360 /* Pods-Off The Dome-dummy.m */,
+				2E507B62A1CCF93BFD0925ACB0EFDA44 /* Pods-Off The Dome-frameworks.sh */,
+				697F3D6F9A0A65A5E2C81B38FB04BABE /* Pods-Off The Dome-resources.sh */,
+				94AC243DE8F09A2AF6B760DA74E3DA7F /* Pods-Off The Dome.debug.xcconfig */,
+				30F7CA756BACFAEB91D3416BCB7909DE /* Pods-Off The Dome.release.xcconfig */,
+			);
+			name = "Pods-Off The Dome";
+			path = "Target Support Files/Pods-Off The Dome";
+			sourceTree = "<group>";
+		};
+		DB1D1773A3F82AEEF88CCB2B4BF37915 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B7FB87B27EE5C210A5B3C73604BF7F13 /* SCLPlayer.xcconfig */,
+				D697D4E868FF8A7CA00AA4D6D09E1B34 /* SCLPlayer-dummy.m */,
+				9B5568FD49921F82B8A71D23429BED6E /* SCLPlayer-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SCLPlayer";
+			sourceTree = "<group>";
+		};
+		DB503BC6DA33EB7F627B33C65954ABE2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0F11C87FE0E4A84A5AE35BEA2B482812 /* soundcloudPlayer.html */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		FF24483A2AFE3556D8973E0938B93959 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EBF2370BC0B40A862DEC51FC08FBE96A /* libPods-Off The Dome.a */,
+				5506B77E220BCC42A504FE0953B04A7A /* libSCLPlayer.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		6C94A39EA25E049732E54694DAD252BA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1A53C6479851B27C50B86FFEE4FE4FE /* SCLPlayerViewController.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		93395B42A8B96C43AAF999F5DB1A8FDE /* SCLPlayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F98CF6D7C0ADD250139F62C53923D06 /* Build configuration list for PBXNativeTarget "SCLPlayer" */;
+			buildPhases = (
+				13F1F58813F18E75452268D68239113E /* Sources */,
+				21567C403DA80DC3B17721FAE08E1FAC /* Frameworks */,
+				6C94A39EA25E049732E54694DAD252BA /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SCLPlayer;
+			productName = SCLPlayer;
+			productReference = 5506B77E220BCC42A504FE0953B04A7A /* libSCLPlayer.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		EB9FBCF61E81F65211914FBAE88A7260 /* Pods-Off The Dome */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 085CA12023D42124A810A959A5CCF03C /* Build configuration list for PBXNativeTarget "Pods-Off The Dome" */;
+			buildPhases = (
+				7A5A028055166BA065F648DB270F8EFD /* Sources */,
+				DF8234AA0DD087539F1B5492CFD02EE9 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1FD6E248F07D383505800421374DBD32 /* PBXTargetDependency */,
+			);
+			name = "Pods-Off The Dome";
+			productName = "Pods-Off The Dome";
+			productReference = EBF2370BC0B40A862DEC51FC08FBE96A /* libPods-Off The Dome.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = FF24483A2AFE3556D8973E0938B93959 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EB9FBCF61E81F65211914FBAE88A7260 /* Pods-Off The Dome */,
+				93395B42A8B96C43AAF999F5DB1A8FDE /* SCLPlayer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		13F1F58813F18E75452268D68239113E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BB4730E6D2D95DDD9A7ED26C2F0159D /* SCLPlayer-dummy.m in Sources */,
+				14F6495880B31190943B7D0CEEF51BB7 /* SCLPlayerViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A5A028055166BA065F648DB270F8EFD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D32CB701132276EF4E1EF60657812F6 /* Pods-Off The Dome-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1FD6E248F07D383505800421374DBD32 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SCLPlayer;
+			target = 93395B42A8B96C43AAF999F5DB1A8FDE /* SCLPlayer */;
+			targetProxy = E497564E00C0277D8AE94C6287009818 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		09DBD197812BCB0675C87F0DF0038949 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7FB87B27EE5C210A5B3C73604BF7F13 /* SCLPlayer.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SCLPlayer/SCLPlayer-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		1D834E3E2E9546A5FF94F5BA593F94C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30F7CA756BACFAEB91D3416BCB7909DE /* Pods-Off The Dome.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		2B18956D547C2402770BA6537FF46033 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94AC243DE8F09A2AF6B760DA74E3DA7F /* Pods-Off The Dome.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		56CFD674D62C6884749067A520FAF28F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7FB87B27EE5C210A5B3C73604BF7F13 /* SCLPlayer.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SCLPlayer/SCLPlayer-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		5CE5176205D06FF3FFE3DDDA9291E44B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		74857149DC1E0D599B8A01A78349A926 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		085CA12023D42124A810A959A5CCF03C /* Build configuration list for PBXNativeTarget "Pods-Off The Dome" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2B18956D547C2402770BA6537FF46033 /* Debug */,
+				1D834E3E2E9546A5FF94F5BA593F94C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5CE5176205D06FF3FFE3DDDA9291E44B /* Debug */,
+				74857149DC1E0D599B8A01A78349A926 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3F98CF6D7C0ADD250139F62C53923D06 /* Build configuration list for PBXNativeTarget "SCLPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56CFD674D62C6884749067A520FAF28F /* Debug */,
+				09DBD197812BCB0675C87F0DF0038949 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
