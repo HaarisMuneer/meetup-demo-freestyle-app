@@ -13,6 +13,7 @@
 		2B09A84D1BC5C49800804E82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B09A84B1BC5C49800804E82 /* Main.storyboard */; };
 		2B09A84F1BC5C49800804E82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B09A84E1BC5C49800804E82 /* Assets.xcassets */; };
 		2B09A8521BC5C49800804E82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B09A8501BC5C49800804E82 /* LaunchScreen.storyboard */; };
+		2B3EA6271BD52799008368E7 /* OTDSong.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3EA6261BD52799008368E7 /* OTDSong.m */; settings = {ASSET_TAGS = (); }; };
 		E2981FFA1BD1775F008F420B /* wordlist.txt in Resources */ = {isa = PBXBuildFile; fileRef = E2981FF91BD1775F008F420B /* wordlist.txt */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,8 @@
 		2B09A84E1BC5C49800804E82 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B09A8511BC5C49800804E82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2B09A8531BC5C49800804E82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2B3EA6251BD52799008368E7 /* OTDSong.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTDSong.h; sourceTree = "<group>"; };
+		2B3EA6261BD52799008368E7 /* OTDSong.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTDSong.m; sourceTree = "<group>"; };
 		E2981FF91BD1775F008F420B /* wordlist.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = wordlist.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,6 +67,8 @@
 				2B09A8461BC5C49800804E82 /* AppDelegate.m */,
 				2B09A8481BC5C49800804E82 /* ViewController.h */,
 				2B09A8491BC5C49800804E82 /* ViewController.m */,
+				2B3EA6251BD52799008368E7 /* OTDSong.h */,
+				2B3EA6261BD52799008368E7 /* OTDSong.m */,
 				2B09A84B1BC5C49800804E82 /* Main.storyboard */,
 				2B09A84E1BC5C49800804E82 /* Assets.xcassets */,
 				2B09A8501BC5C49800804E82 /* LaunchScreen.storyboard */,
@@ -155,6 +160,7 @@
 			files = (
 				2B09A84A1BC5C49800804E82 /* ViewController.m in Sources */,
 				2B09A8471BC5C49800804E82 /* AppDelegate.m in Sources */,
+				2B3EA6271BD52799008368E7 /* OTDSong.m in Sources */,
 				2B09A8441BC5C49800804E82 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
