@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cv1-nQ-gbP">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -49,26 +49,6 @@
                                     <action selector="resetButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sHW-pp-zAg"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQY-Yy-ORl">
-                                <rect key="frame" x="225" y="58" width="151" height="28"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kE8-NE-V52">
-                                <rect key="frame" x="257" y="124" width="86" height="30"/>
-                                <state key="normal" title="every 2 lines"/>
-                                <connections>
-                                    <action selector="everyTwoLinesTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eZe-WA-e1e"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eft-mN-L2P">
-                                <rect key="frame" x="282" y="153" width="37" height="30"/>
-                                <state key="normal" title="Stop!"/>
-                                <connections>
-                                    <action selector="stopIntervalTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dN3-sR-29K"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -82,12 +62,54 @@
                     </view>
                     <connections>
                         <outlet property="bpmView" destination="7m8-yc-KRZ" id="T4A-FJ-TeK"/>
-                        <outlet property="randomWordToIncorporateLabel" destination="HQY-Yy-ORl" id="FqY-e4-zwK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="306" y="432"/>
+            <point key="canvasLocation" x="205" y="432"/>
+        </scene>
+        <!--Word Display View Controller-->
+        <scene sceneID="42z-sg-N0K">
+            <objects>
+                <viewController id="cv1-nQ-gbP" customClass="OTDWordDisplayViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Fea-av-phW"/>
+                        <viewControllerLayoutGuide type="bottom" id="uGN-9o-pPw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DwB-2b-toj">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQY-Yy-ORl">
+                                <rect key="frame" x="225" y="87" width="151" height="28"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kE8-NE-V52">
+                                <rect key="frame" x="257" y="153" width="86" height="30"/>
+                                <state key="normal" title="every 2 lines"/>
+                                <connections>
+                                    <action selector="everyTwoLinesTapped:" destination="cv1-nQ-gbP" eventType="touchUpInside" id="gOp-8a-EpC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eft-mN-L2P">
+                                <rect key="frame" x="282" y="182" width="37" height="30"/>
+                                <state key="normal" title="Stop!"/>
+                                <connections>
+                                    <action selector="stopIntervalTapped:" destination="cv1-nQ-gbP" eventType="touchUpInside" id="YgC-KZ-KJL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="randomWordToIncorporateLabel" destination="HQY-Yy-ORl" id="sms-z2-J1r"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WNH-DK-BLE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1019" y="432"/>
         </scene>
     </scenes>
 </document>
