@@ -9,7 +9,7 @@
 #import "OTDWordDisplayViewController.h"
 #import "OTDSong.h"
 
-@interface OTDWordDisplayViewController ()
+@interface OTDWordDisplayViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @end
 
@@ -27,9 +27,10 @@
     }
     NSLog(@"%@",self.wordsToIncorporateArray);
     
-    OTDSong *alienFamily = [[OTDSong alloc]initWithTitle:@"Alien Family" artist:@"J Dilla" fileName:@"alien.mp3" bpm:85];
+    OTDSong *alienFamily = [[OTDSong alloc]initWithTitle:@"Alien Family (Instrumental)" artist:@"J Dilla" fileName:@"alien.mp3" bpm:85];
     OTDSong *work = [[OTDSong alloc]initWithTitle:@"Work (Instrumental)" artist:@"Gang Starr" fileName:@"work.mp3" bpm:93];
     OTDSong *flavaInYaEar = [[OTDSong alloc]initWithTitle:@"Flava In Ya Ear (Instrumental)" artist:@"Craig Mack" fileName:@"flava.mp3" bpm:89];
+    self.songs = @[alienFamily, work, flavaInYaEar];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -57,6 +58,30 @@
     
     
     self.randomWordToIncorporateLabel.text = self.wordsToIncorporateArray[random];
+}
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.songs.count;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"songCell" forIndexPath:indexPath];
+    OTDSong *song = self.songs[indexPath.row];
+    NSString *title = song.title;
+    NSString *artist = song.artist;
+    NSUInteger bpm = song.bpm;
+    cell.textLabel.text = [NSString stringWithFormat:@"%@\n%@", title, artist];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%lu bpm", bpm];
+    return cell;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 100;
 }
 
 @end

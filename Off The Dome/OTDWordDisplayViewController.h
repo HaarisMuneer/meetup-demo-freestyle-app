@@ -14,7 +14,8 @@
 
 //array property to create with text file
 @property (nonatomic, strong) NSMutableArray *wordsToIncorporateArray;
-@property (nonatomic, strong)NSTimer *intervalTimer;
+@property (nonatomic, strong) NSTimer *intervalTimer;
+@property (nonatomic, strong) NSArray *songs;
 
 
 //button for every two lines
