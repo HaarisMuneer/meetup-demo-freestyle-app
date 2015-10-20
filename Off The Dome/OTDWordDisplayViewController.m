@@ -11,6 +11,8 @@
 
 @interface OTDWordDisplayViewController () <UITableViewDelegate, UITableViewDataSource>
 
+
+
 @end
 
 @implementation OTDWordDisplayViewController
@@ -18,7 +20,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+  
+
+  
+  
     self.wordsToIncorporateArray= [[NSMutableArray alloc]init];
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"wordlist" ofType:@"txt"];
     NSString *fileContents = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:NULL];
@@ -38,10 +43,10 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)everyTwoLinesTapped:(id)sender {
+- (NSTimer*)intervalTimer: (NSUInteger)delayInterval{
     
-    self.intervalTimer = [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(runEveryTwoLines) userInfo:nil repeats:YES];
-    
+    self.intervalTimer = [NSTimer scheduledTimerWithTimeInterval:delayInterval target:self selector:@selector(updateRandomWordLabel) userInfo:nil repeats:YES];
+  return self.intervalTimer;
 }
 
 - (IBAction)stopIntervalTapped:(id)sender
@@ -52,7 +57,22 @@
     }
 }
 
--(void)runEveryTwoLines
+- (IBAction)segmentTapped:(id)sender {
+  //lines are placeholder values until calculation for BPM are input
+  
+  if (self.segmentControl.selectedSegmentIndex == 0) {
+    self.lines = 2;
+  }
+  if (self.segmentControl.selectedSegmentIndex == 1) {
+    self.lines = 4;
+  }
+  else{
+    self.lines = 6;
+  }
+  
+}
+
+-(void)updateRandomWordLabel
 {
     NSUInteger random = arc4random_uniform((u_int32_t) self.wordsToIncorporateArray.count);
     
@@ -83,6 +103,8 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     OTDSong *song = self.songs[indexPath.row];
     [self setUpAVAudioPlayerWithFileName:song.fileName];
+  
+  //would put here something like intervalValue = bpm/self.lines.... [self intervalTimer:intervalValue]
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
