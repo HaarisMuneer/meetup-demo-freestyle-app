@@ -20,8 +20,13 @@
 @property (nonatomic, strong) NSArray *songs;
 @property (nonatomic, strong) AVAudioPlayer *audioPlayer;
 
-//button for every two lines
-- (IBAction)everyTwoLinesTapped:(id)sender;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentControl;
+
+@property (nonatomic)NSUInteger lines;
+
 - (IBAction)stopIntervalTapped:(id)sender;
+
+- (IBAction)segmentTapped:(id)sender;
+
 
 @end
