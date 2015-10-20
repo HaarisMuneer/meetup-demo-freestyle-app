@@ -27,9 +27,9 @@
     }
     NSLog(@"%@",self.wordsToIncorporateArray);
     
-    OTDSong *alienFamily = [[OTDSong alloc]initWithTitle:@"Alien Family (Instrumental)" artist:@"J Dilla" fileName:@"alien.mp3" bpm:85];
-    OTDSong *work = [[OTDSong alloc]initWithTitle:@"Work (Instrumental)" artist:@"Gang Starr" fileName:@"work.mp3" bpm:93];
-    OTDSong *flavaInYaEar = [[OTDSong alloc]initWithTitle:@"Flava In Ya Ear (Instrumental)" artist:@"Craig Mack" fileName:@"flava.mp3" bpm:89];
+    OTDSong *alienFamily = [[OTDSong alloc]initWithTitle:@"Alien Family (Instrumental)" artist:@"J Dilla" fileName:@"alien" bpm:85];
+    OTDSong *work = [[OTDSong alloc]initWithTitle:@"Work (Instrumental)" artist:@"Gang Starr" fileName:@"work" bpm:93];
+    OTDSong *flavaInYaEar = [[OTDSong alloc]initWithTitle:@"Flava In Ya Ear (Instrumental)" artist:@"Craig Mack" fileName:@"flava" bpm:89];
     self.songs = @[alienFamily, work, flavaInYaEar];
 }
 
@@ -80,8 +80,27 @@
     return cell;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    OTDSong *song = self.songs[indexPath.row];
+    [self setUpAVAudioPlayerWithFileName:song.fileName];
+}
+
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 70;
+}
+
+- (void)setUpAVAudioPlayerWithFileName:(NSString *)fileName
+{
+    NSURL *url = [[NSBundle mainBundle] URLForResource:fileName withExtension:@"mp3"];
+    NSError *error = nil;
+    self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
+    if (!self.audioPlayer)
+    {
+        NSLog(@"Error in audioPlayer: %@",
+              [error localizedDescription]);
+    } else {
+        [self.audioPlayer prepareToPlay];
+    }
 }
 
 @end

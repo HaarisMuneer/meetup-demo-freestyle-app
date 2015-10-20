@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
 @interface OTDWordDisplayViewController : UIViewController
 
@@ -15,8 +16,9 @@
 //array property to create with text file
 @property (nonatomic, strong) NSMutableArray *wordsToIncorporateArray;
 @property (nonatomic, strong) NSTimer *intervalTimer;
-@property (nonatomic, strong) NSArray *songs;
 
+@property (nonatomic, strong) NSArray *songs;
+@property (nonatomic, strong) AVAudioPlayer *audioPlayer;
 
 //button for every two lines
 - (IBAction)everyTwoLinesTapped:(id)sender;
