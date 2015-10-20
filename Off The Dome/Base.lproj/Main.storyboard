@@ -102,7 +102,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="e4d-Yl-UDm">
-                                <rect key="frame" x="20" y="402" width="560" height="198"/>
+                                <rect key="frame" x="20" y="300" width="560" height="300"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="songCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="songCell" textLabel="xbu-eG-Asu" detailTextLabel="q5r-XA-i8O" style="IBUITableViewCellStyleValue1" id="Ghm-Nc-Rem">
@@ -140,7 +140,7 @@
                         <constraints>
                             <constraint firstItem="e4d-Yl-UDm" firstAttribute="leading" secondItem="DwB-2b-toj" secondAttribute="leadingMargin" id="6Gy-p7-ZLI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="e4d-Yl-UDm" secondAttribute="trailing" id="Gfh-mG-2XC"/>
-                            <constraint firstItem="e4d-Yl-UDm" firstAttribute="height" secondItem="DwB-2b-toj" secondAttribute="height" multiplier="0.33" id="LwG-b9-CYg"/>
+                            <constraint firstItem="e4d-Yl-UDm" firstAttribute="height" secondItem="DwB-2b-toj" secondAttribute="height" multiplier="0.5" id="LwG-b9-CYg"/>
                             <constraint firstItem="HQY-Yy-ORl" firstAttribute="centerX" secondItem="DwB-2b-toj" secondAttribute="centerX" id="lgj-BH-4hC"/>
                             <constraint firstItem="HQY-Yy-ORl" firstAttribute="centerY" secondItem="DwB-2b-toj" secondAttribute="centerY" multiplier="0.25" id="mPV-dt-reo"/>
                             <constraint firstItem="uGN-9o-pPw" firstAttribute="top" secondItem="e4d-Yl-UDm" secondAttribute="bottom" id="rKP-A5-xJx"/>
