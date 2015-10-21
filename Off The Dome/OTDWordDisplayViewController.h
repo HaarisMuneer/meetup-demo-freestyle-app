@@ -22,7 +22,7 @@
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentControl;
 
-@property (nonatomic)NSUInteger lines;
+@property (nonatomic)NSUInteger lineMultiplier;
 
 - (IBAction)stopIntervalTapped:(id)sender;
 

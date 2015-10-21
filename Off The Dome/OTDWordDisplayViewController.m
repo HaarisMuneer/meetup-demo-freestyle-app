@@ -46,7 +46,7 @@
 - (NSTimer*)intervalTimer: (NSUInteger)delayInterval{
     
     self.intervalTimer = [NSTimer scheduledTimerWithTimeInterval:delayInterval target:self selector:@selector(updateRandomWordLabel) userInfo:nil repeats:YES];
-  return self.intervalTimer;
+    return self.intervalTimer;
 }
 
 - (IBAction)stopIntervalTapped:(id)sender
@@ -61,13 +61,13 @@
   //lines are placeholder values until calculation for BPM are input
   
   if (self.segmentControl.selectedSegmentIndex == 0) {
-    self.lines = 2;
+    self.lineMultiplier = 2;
   }
   if (self.segmentControl.selectedSegmentIndex == 1) {
-    self.lines = 4;
+    self.lineMultiplier = 4;
   }
   else{
-    self.lines = 6;
+    self.lineMultiplier = 8;
   }
   
 }
@@ -122,7 +122,11 @@
     OTDSong *song = self.songs[indexPath.row];
     [self setUpAVAudioPlayerWithFileName:song.fileName];
     [self.audioPlayer play];
-  //would put here something like intervalValue = bpm/self.lines.... [self intervalTimer:intervalValue]
+    CGFloat intervalValue = (250.0/song.bpm) * self.lineMultiplier;
+    NSLog(@"%lu",self.lineMultiplier);
+    NSLog(@"%lu", song.bpm);
+    NSLog(@"%f",intervalValue);
+    [self intervalTimer:intervalValue];
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
