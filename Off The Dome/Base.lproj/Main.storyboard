@@ -81,7 +81,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eft-mN-L2P">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eft-mN-L2P">
                                 <rect key="frame" x="282" y="182" width="37" height="30"/>
                                 <state key="normal" title="Stop!"/>
                                 <connections>
@@ -102,18 +102,18 @@
                                         <rect key="frame" x="0.0" y="28" width="560" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ghm-Nc-Rem" id="obL-AV-nCk">
-                                            <rect key="frame" x="0.0" y="0.0" width="560" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Song/Artist" textAlignment="natural" lineBreakMode="middleTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xbu-eG-Asu">
-                                                    <rect key="frame" x="15" y="12" width="82" height="19.5"/>
+                                                    <rect key="frame" x="15" y="12" width="82" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="bpm" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="q5r-XA-i8O">
-                                                    <rect key="frame" x="512" y="12" width="33" height="19.5"/>
+                                                    <rect key="frame" x="512" y="12" width="33" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
@@ -128,8 +128,12 @@
                                     <outlet property="delegate" destination="cv1-nQ-gbP" id="eSj-2F-SZr"/>
                                 </connections>
                             </tableView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Rc2-xy-c0k">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Rc2-xy-c0k">
                                 <rect key="frame" x="221" y="123" width="159" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="159" id="P9L-A3-C3k"/>
+                                    <constraint firstAttribute="height" constant="28" id="x1h-05-H00"/>
+                                </constraints>
                                 <segments>
                                     <segment title="2"/>
                                     <segment title="4"/>
@@ -142,9 +146,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="eft-mN-L2P" firstAttribute="top" secondItem="Rc2-xy-c0k" secondAttribute="bottom" constant="31" id="0bI-aU-ygT"/>
                             <constraint firstItem="e4d-Yl-UDm" firstAttribute="leading" secondItem="DwB-2b-toj" secondAttribute="leadingMargin" id="6Gy-p7-ZLI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="e4d-Yl-UDm" secondAttribute="trailing" id="Gfh-mG-2XC"/>
+                            <constraint firstItem="Rc2-xy-c0k" firstAttribute="top" secondItem="HQY-Yy-ORl" secondAttribute="bottom" constant="8" id="IEk-1C-fCf"/>
                             <constraint firstItem="e4d-Yl-UDm" firstAttribute="height" secondItem="DwB-2b-toj" secondAttribute="height" multiplier="0.5" id="LwG-b9-CYg"/>
+                            <constraint firstItem="eft-mN-L2P" firstAttribute="centerX" secondItem="DwB-2b-toj" secondAttribute="centerX" id="Ywo-Dg-WjY"/>
+                            <constraint firstItem="Rc2-xy-c0k" firstAttribute="centerX" secondItem="DwB-2b-toj" secondAttribute="centerX" id="jh8-qZ-HAb"/>
                             <constraint firstItem="HQY-Yy-ORl" firstAttribute="centerX" secondItem="DwB-2b-toj" secondAttribute="centerX" id="lgj-BH-4hC"/>
                             <constraint firstItem="HQY-Yy-ORl" firstAttribute="centerY" secondItem="DwB-2b-toj" secondAttribute="centerY" multiplier="0.25" id="mPV-dt-reo"/>
                             <constraint firstItem="uGN-9o-pPw" firstAttribute="top" secondItem="e4d-Yl-UDm" secondAttribute="bottom" id="rKP-A5-xJx"/>
