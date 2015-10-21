@@ -101,9 +101,27 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    
+    // grab selected song
+    // check if its playing, or if its paused
+        // check if its the same song > pause/resume? else stop
+    //
+    
+    
+    
+        //check if its playing
+    if (self.audioPlayer.isPlaying) {
+            // check if its the same song by URL > start or stop
+        
+    
+        
+        
+        
+    }
     OTDSong *song = self.songs[indexPath.row];
     [self setUpAVAudioPlayerWithFileName:song.fileName];
-  
+    [self.audioPlayer play];
   //would put here something like intervalValue = bpm/self.lines.... [self intervalTimer:intervalValue]
 }
 
@@ -115,8 +133,9 @@
 {
     NSURL *url = [[NSBundle mainBundle] URLForResource:fileName withExtension:@"mp3"];
     NSError *error = nil;
+//    NSLog(@"%@", url);
     self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
-    if (!self.audioPlayer)
+    if (error)
     {
         NSLog(@"Error in audioPlayer: %@",
               [error localizedDescription]);
