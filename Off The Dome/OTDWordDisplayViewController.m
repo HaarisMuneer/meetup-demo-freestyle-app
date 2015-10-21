@@ -22,7 +22,8 @@
     // Do any additional setup after loading the view.
   
 
-  
+  self.lineMultiplier = 2;
+  self.randomWordToIncorporateLabel.text = @"";
   
     self.wordsToIncorporateArray= [[NSMutableArray alloc]init];
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"wordlist" ofType:@"txt"];
@@ -55,6 +56,8 @@
         [self.intervalTimer invalidate];
         self.intervalTimer = nil;
     }
+  
+  [self.audioPlayer stop];
 }
 
 - (IBAction)segmentTapped:(id)sender {
@@ -119,6 +122,12 @@
         
         
     }
+  
+  if (self.intervalTimer) {
+    [self.intervalTimer invalidate];
+    self.intervalTimer = nil;
+  }
+  
     OTDSong *song = self.songs[indexPath.row];
     [self setUpAVAudioPlayerWithFileName:song.fileName];
     [self.audioPlayer play];
@@ -127,6 +136,7 @@
     NSLog(@"%lu", song.bpm);
     NSLog(@"%f",intervalValue);
     [self intervalTimer:intervalValue];
+  [self updateRandomWordLabel];
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
