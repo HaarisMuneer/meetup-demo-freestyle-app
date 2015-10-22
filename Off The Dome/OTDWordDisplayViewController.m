@@ -25,6 +25,7 @@
     self.lineMultiplier = 2;
     self.randomWordToIncorporateLabel.text = @"";
     self.synthesizer = [[AVSpeechSynthesizer alloc] init];
+    //[self setStyle];
   
     self.wordsToIncorporateArray= [[NSMutableArray alloc]init];
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"wordlist" ofType:@"txt"];
@@ -152,5 +153,17 @@
         [self.audioPlayer prepareToPlay];
     }
 }
+
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    cell.backgroundColor = [UIColor clearColor];
+    cell.contentView.backgroundColor = [UIColor clearColor];
+}
+
+//-(void)setStyle {
+//    self.segmentControl.tintColor = [UIColor colorWithRed:0.15 green:0.2 blue:0.3 alpha:1.0];
+//    self.songTableView.backgroundColor = [UIColor clearColor];
+//    self.songTableView.layer.borderWidth = 2.0;
+//    self.view.backgroundColor = [UIColor colorWithRed:0.5 green:0.8 blue:0.9 alpha:1.0];
+//}
 
 @end

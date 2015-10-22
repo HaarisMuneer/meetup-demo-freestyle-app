@@ -12,6 +12,7 @@
 @interface OTDWordDisplayViewController : UIViewController
 
 
+@property (weak, nonatomic) IBOutlet UITableView *songTableView;
 
 //array property to create with text file
 @property (nonatomic, strong) NSMutableArray *wordsToIncorporateArray;
