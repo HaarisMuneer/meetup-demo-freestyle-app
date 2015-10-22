@@ -22,8 +22,8 @@
     // Do any additional setup after loading the view.
   
 
-  self.lineMultiplier = 2;
-  self.randomWordToIncorporateLabel.text = @"";
+    self.lineMultiplier = 2;
+    self.randomWordToIncorporateLabel.text = @"";
   
     self.wordsToIncorporateArray= [[NSMutableArray alloc]init];
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"wordlist" ofType:@"txt"];
@@ -34,7 +34,7 @@
     NSLog(@"%@",self.wordsToIncorporateArray);
     
     OTDSong *alienFamily = [[OTDSong alloc]initWithTitle:@"Alien Family (Instrumental)" artist:@"J Dilla" fileName:@"alien" bpm:85];
-    OTDSong *work = [[OTDSong alloc]initWithTitle:@"Work (Instrumental)" artist:@"Gang Starr" fileName:@"work" bpm:93];
+    OTDSong *work = [[OTDSong alloc]initWithTitle:@"Work (Instrumental)" artist:@"Gang Starr" fileName:@"work" bpm:91];
     OTDSong *flavaInYaEar = [[OTDSong alloc]initWithTitle:@"Flava In Ya Ear (Instrumental)" artist:@"Craig Mack" fileName:@"flava" bpm:89];
     self.songs = @[alienFamily, work, flavaInYaEar];
 }
@@ -44,7 +44,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (NSTimer*)intervalTimer: (NSUInteger)delayInterval{
+- (NSTimer*)intervalTimer: (CGFloat)delayInterval{
     
     self.intervalTimer = [NSTimer scheduledTimerWithTimeInterval:delayInterval target:self selector:@selector(updateRandomWordLabel) userInfo:nil repeats:YES];
     return self.intervalTimer;
@@ -56,8 +56,7 @@
         [self.intervalTimer invalidate];
         self.intervalTimer = nil;
     }
-  
-  [self.audioPlayer stop];
+    [self.audioPlayer stop];
 }
 
 - (IBAction)segmentTapped:(id)sender {
@@ -104,39 +103,32 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-
     
-    // grab selected song
-    // check if its playing, or if its paused
-        // check if its the same song > pause/resume? else stop
-    //
+    OTDSong *song = self.songs[indexPath.row];
     
-    
-    
-        //check if its playing
-    if (self.audioPlayer.isPlaying) {
-            // check if its the same song by URL > start or stop
-        
-    
-        
-        
-        
+    if ([[self.audioPlayer.url absoluteString] containsString:song.fileName]) {
+        if (self.audioPlayer.isPlaying) {
+            [self.audioPlayer pause];
+        }
+        else {
+            [self.audioPlayer play];
+        }
     }
   
-  if (self.intervalTimer) {
-    [self.intervalTimer invalidate];
-    self.intervalTimer = nil;
-  }
+    if (self.intervalTimer) {
+        [self.intervalTimer invalidate];
+        self.intervalTimer = nil;
+    }
   
-    OTDSong *song = self.songs[indexPath.row];
+    
     [self setUpAVAudioPlayerWithFileName:song.fileName];
     [self.audioPlayer play];
-    CGFloat intervalValue = (250.0/song.bpm) * self.lineMultiplier;
+    CGFloat intervalValue = (240.0/song.bpm) * self.lineMultiplier;
     NSLog(@"%lu",self.lineMultiplier);
     NSLog(@"%lu", song.bpm);
     NSLog(@"%f",intervalValue);
     [self intervalTimer:intervalValue];
-  [self updateRandomWordLabel];
+    [self updateRandomWordLabel];
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
