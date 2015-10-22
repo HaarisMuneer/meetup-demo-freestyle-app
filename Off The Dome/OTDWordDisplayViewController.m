@@ -24,6 +24,7 @@
 
     self.lineMultiplier = 2;
     self.randomWordToIncorporateLabel.text = @"";
+    self.synthesizer = [[AVSpeechSynthesizer alloc] init];
   
     self.wordsToIncorporateArray= [[NSMutableArray alloc]init];
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"wordlist" ofType:@"txt"];
@@ -80,6 +81,8 @@
     
     
     self.randomWordToIncorporateLabel.text = self.wordsToIncorporateArray[random];
+    self.wordUtterance = [AVSpeechUtterance speechUtteranceWithString:self.randomWordToIncorporateLabel.text];
+    [self.synthesizer speakUtterance:self.wordUtterance];
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
