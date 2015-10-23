@@ -29,9 +29,11 @@
     self.wordsToIncorporateArray= [[NSMutableArray alloc]init];
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"wordlist" ofType:@"txt"];
     NSString *fileContents = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:NULL];
+  
     for (NSString *line in [fileContents componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]]) {
         [self.wordsToIncorporateArray addObject:line];
     }
+  
     NSLog(@"%@",self.wordsToIncorporateArray);
     
     OTDSong *alienFamily = [[OTDSong alloc]initWithTitle:@"Alien Family (Instrumental)" artist:@"J Dilla" fileName:@"alien" bpm:85];
