@@ -23,9 +23,10 @@
   
 
     self.lineMultiplier = 2;
-    self.randomWordToIncorporateLabel.text = @"";
+    self.randomWordToIncorporateLabel.text = @"Off The Dome!";
+  self.randomWordToIncorporateLabel.font = [UIFont systemFontOfSize:55];
     self.synthesizer = [[AVSpeechSynthesizer alloc] init];
-    //[self setStyle];
+    [self setStyle];
   
     self.wordsToIncorporateArray= [[NSMutableArray alloc]init];
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"wordlist" ofType:@"txt"];
@@ -86,6 +87,7 @@
     
     
     self.randomWordToIncorporateLabel.text = self.wordsToIncorporateArray[random];
+  self.randomWordToIncorporateLabel.font = [UIFont systemFontOfSize:75];
     self.wordUtterance = [AVSpeechUtterance speechUtteranceWithString:self.randomWordToIncorporateLabel.text];
     [self.synthesizer speakUtterance:self.wordUtterance];
 }
@@ -106,6 +108,10 @@
     NSString *artist = song.artist;
     NSUInteger bpm = song.bpm;
     cell.textLabel.text = [NSString stringWithFormat:@"%@\n%@", title, artist];
+    cell.detailTextLabel.textColor = [UIColor colorWithRed:0.196 green:0.6 blue:0.733 alpha:1];
+    cell.textLabel.textColor = [UIColor colorWithRed:0.259 green:0.259 blue:0.259 alpha:1];
+ 
+  
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%lu bpm", bpm];
     return cell;
 }
@@ -163,11 +169,36 @@
     cell.contentView.backgroundColor = [UIColor clearColor];
 }
 
-//-(void)setStyle {
-//    self.segmentControl.tintColor = [UIColor colorWithRed:0.15 green:0.2 blue:0.3 alpha:1.0];
-//    self.songTableView.backgroundColor = [UIColor clearColor];
-//    self.songTableView.layer.borderWidth = 2.0;
-//    self.view.backgroundColor = [UIColor colorWithRed:0.5 green:0.8 blue:0.9 alpha:1.0];
-//}
+-(void)setStyle {
+  UIColor *darkMainColor = [UIColor colorWithRed:0.216 green:0.243 blue:0.251 alpha:1];
+  UIColor *boldBlue = [UIColor colorWithRed:0.196 green:0.6 blue:0.733 alpha:1];
+  UIColor *brightOrange = [UIColor colorWithRed:1 green:0.6 blue:0 alpha:1];
+  UIColor *darkGray = [UIColor colorWithRed:0.259 green:0.259 blue:0.259 alpha:1];
+  UIColor *lightGray = [UIColor colorWithRed:0.737 green:0.737 blue:0.737 alpha:1];
+  UIColor *lighterGray = [UIColor colorWithRed:0.957 green:0.957 blue:0.957 alpha:1];
+  
+  
+  
+  
+    self.segmentControl.tintColor = boldBlue;
+    self.songTableView.backgroundColor = [UIColor clearColor];
+    self.songTableView.layer.borderWidth = 2.0;
+  self.songTableView.layer.borderColor = darkGray.CGColor;
+  self.view.backgroundColor = lighterGray;
+  
+//  self.view.backgroundColor = [UIColor colorWithRe d:0.965 green:1 blue:0.973 alpha:1];
+  self.randomWordToIncorporateLabel.textColor = brightOrange;
+  
+  
+  
+//  self.stopButton.layer.borderWidth = 1.0;
+//  self.stopButton.layer.borderColor = darkGray.CGColor;
+  [self.stopButton setTitleColor:boldBlue forState:UIControlStateNormal];
+  self.wantANewWordLabel.textColor = darkGray;
+  self.linesLabel.textColor = darkGray;
+  
+  
+  
+}
 
 @end

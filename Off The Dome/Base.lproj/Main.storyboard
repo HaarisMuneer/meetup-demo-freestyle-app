@@ -81,39 +81,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eft-mN-L2P">
-                                <rect key="frame" x="282" y="252" width="37" height="30"/>
-                                <state key="normal" title="Stop!"/>
-                                <connections>
-                                    <action selector="stopIntervalTapped:" destination="cv1-nQ-gbP" eventType="touchUpInside" id="YgC-KZ-KJL"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQY-Yy-ORl">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="HQY-Yy-ORl">
                                 <rect key="frame" x="87" y="32" width="426" height="113"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="71"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="e4d-Yl-UDm">
-                                <rect key="frame" x="20" y="300" width="560" height="300"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="e4d-Yl-UDm">
+                                <rect key="frame" x="20" y="300" width="560" height="280"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="songCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="songCell" textLabel="xbu-eG-Asu" detailTextLabel="q5r-XA-i8O" style="IBUITableViewCellStyleValue1" id="Ghm-Nc-Rem">
                                         <rect key="frame" x="0.0" y="28" width="560" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ghm-Nc-Rem" id="obL-AV-nCk">
-                                            <rect key="frame" x="0.0" y="0.0" width="560" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Song/Artist" textAlignment="natural" lineBreakMode="middleTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xbu-eG-Asu">
-                                                    <rect key="frame" x="15" y="12" width="82" height="19.5"/>
+                                                    <rect key="frame" x="15" y="12" width="82" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="bpm" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="q5r-XA-i8O">
-                                                    <rect key="frame" x="512" y="12" width="33" height="19.5"/>
+                                                    <rect key="frame" x="512" y="12" width="33" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
@@ -155,12 +148,21 @@
                                 <color key="textColor" red="0.10588235294117647" green="0.14117647058823529" blue="0.22745098039215686" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eft-mN-L2P">
+                                <rect key="frame" x="269" y="262" width="62" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="62" id="Bjg-2V-zaN"/>
+                                    <constraint firstAttribute="height" constant="38" id="ulX-Fg-svx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Stop!"/>
+                                <connections>
+                                    <action selector="stopIntervalTapped:" destination="cv1-nQ-gbP" eventType="touchUpInside" id="YgC-KZ-KJL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="eft-mN-L2P" firstAttribute="top" secondItem="Rc2-xy-c0k" secondAttribute="bottom" constant="39" id="0bI-aU-ygT"/>
-                            <constraint firstItem="DCy-VD-nKb" firstAttribute="trailing" secondItem="eft-mN-L2P" secondAttribute="trailing" id="4Mq-8s-9Z1"/>
-                            <constraint firstItem="eft-mN-L2P" firstAttribute="top" secondItem="DCy-VD-nKb" secondAttribute="bottom" constant="15" id="5MO-Dr-q97"/>
                             <constraint firstItem="e4d-Yl-UDm" firstAttribute="leading" secondItem="DwB-2b-toj" secondAttribute="leadingMargin" id="6Gy-p7-ZLI"/>
                             <constraint firstItem="Rc2-xy-c0k" firstAttribute="top" secondItem="TPQ-iM-pDF" secondAttribute="bottom" constant="3" id="BZI-qB-NVh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="e4d-Yl-UDm" secondAttribute="trailing" id="Gfh-mG-2XC"/>
@@ -169,22 +171,26 @@
                             <constraint firstItem="e4d-Yl-UDm" firstAttribute="height" secondItem="DwB-2b-toj" secondAttribute="height" multiplier="0.5" id="LwG-b9-CYg"/>
                             <constraint firstItem="DCy-VD-nKb" firstAttribute="centerX" secondItem="DwB-2b-toj" secondAttribute="centerX" constant="1" id="OYU-Yg-n3V"/>
                             <constraint firstItem="TPQ-iM-pDF" firstAttribute="trailing" secondItem="Rc2-xy-c0k" secondAttribute="trailing" constant="19" id="QI1-pO-W0Y"/>
+                            <constraint firstItem="eft-mN-L2P" firstAttribute="centerX" secondItem="DwB-2b-toj" secondAttribute="centerX" id="RcK-E5-L4D"/>
+                            <constraint firstItem="uGN-9o-pPw" firstAttribute="top" secondItem="e4d-Yl-UDm" secondAttribute="bottom" constant="20" id="Tif-SR-7iQ"/>
                             <constraint firstItem="TPQ-iM-pDF" firstAttribute="top" secondItem="HQY-Yy-ORl" secondAttribute="bottom" constant="16" id="WTJ-CD-xog"/>
-                            <constraint firstItem="eft-mN-L2P" firstAttribute="centerX" secondItem="DwB-2b-toj" secondAttribute="centerX" id="Ywo-Dg-WjY"/>
+                            <constraint firstItem="eft-mN-L2P" firstAttribute="top" secondItem="DCy-VD-nKb" secondAttribute="bottom" constant="25" id="Xmd-V6-smw"/>
                             <constraint firstItem="TPQ-iM-pDF" firstAttribute="centerX" secondItem="DwB-2b-toj" secondAttribute="centerX" id="atA-xg-pdM"/>
                             <constraint firstItem="DCy-VD-nKb" firstAttribute="top" secondItem="Rc2-xy-c0k" secondAttribute="bottom" constant="3" id="i2y-iX-krd"/>
                             <constraint firstItem="Rc2-xy-c0k" firstAttribute="centerX" secondItem="DwB-2b-toj" secondAttribute="centerX" id="jh8-qZ-HAb"/>
                             <constraint firstItem="HQY-Yy-ORl" firstAttribute="centerX" secondItem="DwB-2b-toj" secondAttribute="centerX" id="lgj-BH-4hC"/>
                             <constraint firstItem="HQY-Yy-ORl" firstAttribute="centerY" secondItem="DwB-2b-toj" secondAttribute="centerY" multiplier="0.25" constant="13.25" id="mPV-dt-reo"/>
                             <constraint firstItem="TPQ-iM-pDF" firstAttribute="top" secondItem="DwB-2b-toj" secondAttribute="top" constant="161" id="qUP-cH-Evf"/>
-                            <constraint firstItem="uGN-9o-pPw" firstAttribute="top" secondItem="e4d-Yl-UDm" secondAttribute="bottom" id="rKP-A5-xJx"/>
                             <constraint firstItem="DCy-VD-nKb" firstAttribute="leading" secondItem="Rc2-xy-c0k" secondAttribute="leading" constant="62" id="rxs-UX-h0V"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="linesLabel" destination="DCy-VD-nKb" id="efU-E9-pDq"/>
                         <outlet property="randomWordToIncorporateLabel" destination="HQY-Yy-ORl" id="sms-z2-J1r"/>
                         <outlet property="segmentControl" destination="Rc2-xy-c0k" id="H2c-eD-15f"/>
                         <outlet property="songTableView" destination="e4d-Yl-UDm" id="Ako-Z1-2Nd"/>
+                        <outlet property="stopButton" destination="eft-mN-L2P" id="fmW-ae-vFS"/>
+                        <outlet property="wantANewWordLabel" destination="TPQ-iM-pDF" id="yj7-Mg-m7z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WNH-DK-BLE" userLabel="First Responder" sceneMemberID="firstResponder"/>

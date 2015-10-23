@@ -28,6 +28,9 @@
 
 @property (nonatomic, strong) AVSpeechUtterance *wordUtterance;
 @property (nonatomic, strong) AVSpeechSynthesizer *synthesizer;
+@property (weak, nonatomic) IBOutlet UIButton *stopButton;
+@property (weak, nonatomic) IBOutlet UILabel *wantANewWordLabel;
+@property (weak, nonatomic) IBOutlet UILabel *linesLabel;
 
 - (IBAction)stopIntervalTapped:(id)sender;
 
