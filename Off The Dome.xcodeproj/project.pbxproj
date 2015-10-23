@@ -13,12 +13,12 @@
 		2B09A84D1BC5C49800804E82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B09A84B1BC5C49800804E82 /* Main.storyboard */; };
 		2B09A84F1BC5C49800804E82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B09A84E1BC5C49800804E82 /* Assets.xcassets */; };
 		2B09A8521BC5C49800804E82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B09A8501BC5C49800804E82 /* LaunchScreen.storyboard */; };
-		2B3EA6271BD52799008368E7 /* OTDSong.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3EA6261BD52799008368E7 /* OTDSong.m */; settings = {ASSET_TAGS = (); }; };
-		2B3EA62A1BD5303D008368E7 /* OTDWordDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3EA6291BD5303D008368E7 /* OTDWordDisplayViewController.m */; settings = {ASSET_TAGS = (); }; };
-		2B4152171BD7C805003D762E /* alien.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2B4152141BD7C805003D762E /* alien.mp3 */; settings = {ASSET_TAGS = (); }; };
-		2B4152181BD7C805003D762E /* flava.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2B4152151BD7C805003D762E /* flava.mp3 */; settings = {ASSET_TAGS = (); }; };
-		2B4152191BD7C805003D762E /* work.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2B4152161BD7C805003D762E /* work.mp3 */; settings = {ASSET_TAGS = (); }; };
-		E2981FFA1BD1775F008F420B /* wordlist.txt in Resources */ = {isa = PBXBuildFile; fileRef = E2981FF91BD1775F008F420B /* wordlist.txt */; settings = {ASSET_TAGS = (); }; };
+		2B3EA6271BD52799008368E7 /* OTDSong.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3EA6261BD52799008368E7 /* OTDSong.m */; };
+		2B3EA62A1BD5303D008368E7 /* OTDWordDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3EA6291BD5303D008368E7 /* OTDWordDisplayViewController.m */; };
+		2B4152171BD7C805003D762E /* alien.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2B4152141BD7C805003D762E /* alien.mp3 */; };
+		2B4152181BD7C805003D762E /* flava.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2B4152151BD7C805003D762E /* flava.mp3 */; };
+		2B4152191BD7C805003D762E /* work.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2B4152161BD7C805003D762E /* work.mp3 */; };
+		E2981FFA1BD1775F008F420B /* wordlist.txt in Resources */ = {isa = PBXBuildFile; fileRef = E2981FF91BD1775F008F420B /* wordlist.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -132,6 +132,7 @@
 				TargetAttributes = {
 					2B09A83E1BC5C49800804E82 = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = GQ6DHHL68B;
 					};
 				};
 			};
@@ -291,10 +292,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Off The Dome/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.whatever.Off-The-Dome";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -302,10 +306,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Off The Dome/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.whatever.Off-The-Dome";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
