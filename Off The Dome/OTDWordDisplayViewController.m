@@ -25,6 +25,7 @@
     self.lineMultiplier = 2;
     self.randomWordToIncorporateLabel.text = @"";
     self.synthesizer = [[AVSpeechSynthesizer alloc] init];
+    //[self setStyle];
   
     self.wordsToIncorporateArray= [[NSMutableArray alloc]init];
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"wordlist" ofType:@"txt"];
@@ -37,8 +38,8 @@
     NSLog(@"%@",self.wordsToIncorporateArray);
     
     OTDSong *alienFamily = [[OTDSong alloc]initWithTitle:@"Alien Family (Instrumental)" artist:@"J Dilla" fileName:@"alien" bpm:85];
-    OTDSong *work = [[OTDSong alloc]initWithTitle:@"Work (Instrumental)" artist:@"Gang Starr" fileName:@"work" bpm:91];
-    OTDSong *flavaInYaEar = [[OTDSong alloc]initWithTitle:@"Flava In Ya Ear (Instrumental)" artist:@"Craig Mack" fileName:@"flava" bpm:89];
+    OTDSong *work = [[OTDSong alloc]initWithTitle:@"Work (Instrumental)" artist:@"Gang Starr" fileName:@"work" bpm:92];
+    OTDSong *flavaInYaEar = [[OTDSong alloc]initWithTitle:@"Flava In Ya Ear (Instrumental)" artist:@"Craig Mack" fileName:@"flava" bpm:90];
     self.songs = @[alienFamily, work, flavaInYaEar];
 }
 
@@ -64,16 +65,18 @@
 
 - (IBAction)segmentTapped:(id)sender {
   //lines are placeholder values until calculation for BPM are input
-  
-  if (self.segmentControl.selectedSegmentIndex == 0) {
-    self.lineMultiplier = 2;
-  }
-  if (self.segmentControl.selectedSegmentIndex == 1) {
-    self.lineMultiplier = 4;
-  }
-  else{
-    self.lineMultiplier = 8;
-  }
+    NSLog(@"selectedSegmentIndex: %lu", self.segmentControl.selectedSegmentIndex);
+    switch (self.segmentControl.selectedSegmentIndex) {
+        case 0:
+            self.lineMultiplier = 2;
+            break;
+        case 1:
+            self.lineMultiplier = 4;
+            break;
+        default:
+            self.lineMultiplier = 8;
+            break;
+    }
   
 }
 
@@ -129,9 +132,9 @@
     [self setUpAVAudioPlayerWithFileName:song.fileName];
     [self.audioPlayer play];
     CGFloat intervalValue = (240.0/song.bpm) * self.lineMultiplier;
-    NSLog(@"%lu",self.lineMultiplier);
-    NSLog(@"%lu", song.bpm);
-    NSLog(@"%f",intervalValue);
+    NSLog(@"lineMultiplier: %lu",self.lineMultiplier);
+    NSLog(@"BPM: %lu", song.bpm);
+    NSLog(@"intervalValue: %f",intervalValue);
     [self intervalTimer:intervalValue];
     [self updateRandomWordLabel];
 }
@@ -154,5 +157,17 @@
         [self.audioPlayer prepareToPlay];
     }
 }
+
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    cell.backgroundColor = [UIColor clearColor];
+    cell.contentView.backgroundColor = [UIColor clearColor];
+}
+
+//-(void)setStyle {
+//    self.segmentControl.tintColor = [UIColor colorWithRed:0.15 green:0.2 blue:0.3 alpha:1.0];
+//    self.songTableView.backgroundColor = [UIColor clearColor];
+//    self.songTableView.layer.borderWidth = 2.0;
+//    self.view.backgroundColor = [UIColor colorWithRed:0.5 green:0.8 blue:0.9 alpha:1.0];
+//}
 
 @end
