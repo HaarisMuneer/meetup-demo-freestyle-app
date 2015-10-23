@@ -18,6 +18,7 @@
 		2B4152171BD7C805003D762E /* alien.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2B4152141BD7C805003D762E /* alien.mp3 */; };
 		2B4152181BD7C805003D762E /* flava.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2B4152151BD7C805003D762E /* flava.mp3 */; };
 		2B4152191BD7C805003D762E /* work.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2B4152161BD7C805003D762E /* work.mp3 */; };
+		2B7BCB8D1BDAB76C0082AEA6 /* LemonMilk.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2B7BCB8C1BDAB76C0082AEA6 /* LemonMilk.otf */; settings = {ASSET_TAGS = (); }; };
 		E2981FFA1BD1775F008F420B /* wordlist.txt in Resources */ = {isa = PBXBuildFile; fileRef = E2981FF91BD1775F008F420B /* wordlist.txt */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		2B4152141BD7C805003D762E /* alien.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alien.mp3; sourceTree = "<group>"; };
 		2B4152151BD7C805003D762E /* flava.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = flava.mp3; sourceTree = "<group>"; };
 		2B4152161BD7C805003D762E /* work.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = work.mp3; sourceTree = "<group>"; };
+		2B7BCB8C1BDAB76C0082AEA6 /* LemonMilk.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LemonMilk.otf; sourceTree = "<group>"; };
 		E2981FF91BD1775F008F420B /* wordlist.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = wordlist.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,6 +77,7 @@
 				2B4152141BD7C805003D762E /* alien.mp3 */,
 				2B4152151BD7C805003D762E /* flava.mp3 */,
 				2B4152161BD7C805003D762E /* work.mp3 */,
+				2B7BCB8C1BDAB76C0082AEA6 /* LemonMilk.otf */,
 				2B09A8451BC5C49800804E82 /* AppDelegate.h */,
 				2B09A8461BC5C49800804E82 /* AppDelegate.m */,
 				2B09A8481BC5C49800804E82 /* ViewController.h */,
@@ -163,6 +166,7 @@
 				2B09A84F1BC5C49800804E82 /* Assets.xcassets in Resources */,
 				2B4152171BD7C805003D762E /* alien.mp3 in Resources */,
 				2B4152181BD7C805003D762E /* flava.mp3 in Resources */,
+				2B7BCB8D1BDAB76C0082AEA6 /* LemonMilk.otf in Resources */,
 				E2981FFA1BD1775F008F420B /* wordlist.txt in Resources */,
 				2B09A84D1BC5C49800804E82 /* Main.storyboard in Resources */,
 				2B4152191BD7C805003D762E /* work.mp3 in Resources */,

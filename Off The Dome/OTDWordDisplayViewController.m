@@ -24,7 +24,7 @@
 
     self.lineMultiplier = 2;
     self.randomWordToIncorporateLabel.text = @"Off The Dome!";
-  self.randomWordToIncorporateLabel.font = [UIFont systemFontOfSize:55];
+    self.randomWordToIncorporateLabel.font = [UIFont fontWithName:@"LemonMilk" size:50];
     self.synthesizer = [[AVSpeechSynthesizer alloc] init];
     [self setStyle];
   
@@ -41,7 +41,7 @@
     OTDSong *alienFamily = [[OTDSong alloc]initWithTitle:@"Alien Family (Instrumental)" artist:@"J Dilla" fileName:@"alien" bpm:85];
     OTDSong *work = [[OTDSong alloc]initWithTitle:@"Work (Instrumental)" artist:@"Gang Starr" fileName:@"work" bpm:92];
     OTDSong *flavaInYaEar = [[OTDSong alloc]initWithTitle:@"Flava In Ya Ear (Instrumental)" artist:@"Craig Mack" fileName:@"flava" bpm:90];
-    self.songs = @[alienFamily, work, flavaInYaEar];
+    self.songs = @[flavaInYaEar, work, alienFamily];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -84,10 +84,13 @@
 -(void)updateRandomWordLabel
 {
     NSUInteger random = arc4random_uniform((u_int32_t) self.wordsToIncorporateArray.count);
-    
-    
-    self.randomWordToIncorporateLabel.text = self.wordsToIncorporateArray[random];
-  self.randomWordToIncorporateLabel.font = [UIFont systemFontOfSize:75];
+    NSString *randomWord = self.wordsToIncorporateArray[random];
+    self.randomWordToIncorporateLabel.text = randomWord;
+    if (randomWord.length >= 7) {
+        self.randomWordToIncorporateLabel.font = [UIFont fontWithName:@"LemonMilk" size:68];
+    }
+    else self.randomWordToIncorporateLabel.font = [UIFont fontWithName:@"LemonMilk" size:84];
+
     self.wordUtterance = [AVSpeechUtterance speechUtteranceWithString:self.randomWordToIncorporateLabel.text];
     [self.synthesizer speakUtterance:self.wordUtterance];
 }
