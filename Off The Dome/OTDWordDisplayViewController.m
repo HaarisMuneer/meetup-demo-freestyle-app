@@ -38,7 +38,7 @@
     OTDSong *alienFamily = [[OTDSong alloc]initWithTitle:@"Alien Family (Instrumental)" artist:@"J Dilla" fileName:@"alien" bpm:85];
     OTDSong *work = [[OTDSong alloc]initWithTitle:@"Work (Instrumental)" artist:@"Gang Starr" fileName:@"work" bpm:92];
     OTDSong *flavaInYaEar = [[OTDSong alloc]initWithTitle:@"Flava In Ya Ear (Instrumental)" artist:@"Craig Mack" fileName:@"flava" bpm:90];
-    self.songs = @[alienFamily, work, flavaInYaEar];
+    self.songs = @[flavaInYaEar, work, alienFamily];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -81,11 +81,14 @@
 -(void)updateRandomWordLabel
 {
     NSUInteger random = arc4random_uniform((u_int32_t) self.wordsToIncorporateArray.count);
-    
-    
-    self.randomWordToIncorporateLabel.text = self.wordsToIncorporateArray[random];
+    NSString *randomWord = self.wordsToIncorporateArray[random];
+
+    self.randomWordToIncorporateLabel.text = randomWord;
+    if (randomWord.length >= 7) {
+        [self.randomWordToIncorporateLabel setFont:[UIFont fontWithName:@"LemonMilk" size:68]];
+    }
     self.wordUtterance = [AVSpeechUtterance speechUtteranceWithString:self.randomWordToIncorporateLabel.text];
-    [self.synthesizer speakUtterance:self.wordUtterance];
+    //[self.synthesizer speakUtterance:self.wordUtterance];
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
