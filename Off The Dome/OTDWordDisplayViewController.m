@@ -63,16 +63,18 @@
 
 - (IBAction)segmentTapped:(id)sender {
   //lines are placeholder values until calculation for BPM are input
-  
-  if (self.segmentControl.selectedSegmentIndex == 0) {
-    self.lineMultiplier = 2;
-  }
-  if (self.segmentControl.selectedSegmentIndex == 1) {
-    self.lineMultiplier = 4;
-  }
-  else{
-    self.lineMultiplier = 8;
-  }
+    NSLog(@"selectedSegmentIndex: %lu", self.segmentControl.selectedSegmentIndex);
+    switch (self.segmentControl.selectedSegmentIndex) {
+        case 0:
+            self.lineMultiplier = 2;
+            break;
+        case 1:
+            self.lineMultiplier = 4;
+            break;
+        default:
+            self.lineMultiplier = 8;
+            break;
+    }
   
 }
 
@@ -128,9 +130,9 @@
     [self setUpAVAudioPlayerWithFileName:song.fileName];
     [self.audioPlayer play];
     CGFloat intervalValue = (240.0/song.bpm) * self.lineMultiplier;
-    NSLog(@"%lu",self.lineMultiplier);
-    NSLog(@"%lu", song.bpm);
-    NSLog(@"%f",intervalValue);
+    NSLog(@"lineMultiplier: %lu",self.lineMultiplier);
+    NSLog(@"BPM: %lu", song.bpm);
+    NSLog(@"intervalValue: %f",intervalValue);
     [self intervalTimer:intervalValue];
     [self updateRandomWordLabel];
 }
