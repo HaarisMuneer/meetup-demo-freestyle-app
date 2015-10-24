@@ -14,7 +14,8 @@
 @property (nonatomic, strong) NSString *artist;
 @property (nonatomic, strong) NSString *fileName;
 @property (nonatomic, assign) NSUInteger bpm;
-
+@property (nonatomic, assign) BOOL isPlaying;
+@property (nonatomic, assign) BOOL isPaused;
 
 
 -(instancetype) initWithTitle: (NSString *)title
