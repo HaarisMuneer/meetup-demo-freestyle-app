@@ -15,7 +15,7 @@
     return self;
 }
 
--(instancetype) initWithTitle:(NSString *)title artist:(NSString *)artist fileName:(NSString *)fileName bpm:(NSUInteger)bpm playing:(BOOL) isPlaying paused:(BOOL) isPaused{
+-(instancetype) initWithTitle:(NSString *)title artist:(NSString *)artist fileName:(NSString *)fileName bpm:(NSUInteger)bpm{
     self = [super init];
     if (self) {
         _title = title;
