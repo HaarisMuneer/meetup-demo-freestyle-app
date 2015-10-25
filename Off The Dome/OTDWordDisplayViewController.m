@@ -11,7 +11,8 @@
 
 @interface OTDWordDisplayViewController () <UITableViewDelegate, UITableViewDataSource>
 
-
+@property (nonatomic)NSUInteger BPM;
+@property (nonatomic)NSUInteger currentInterval;
 
 @end
 
@@ -93,6 +94,19 @@
 
     self.wordUtterance = [AVSpeechUtterance speechUtteranceWithString:self.randomWordToIncorporateLabel.text];
     [self.synthesizer speakUtterance:self.wordUtterance];
+  
+  if (self.currentInterval != self.lineMultiplier) {
+      CGFloat intervalValue = (240.0/self.BPM) * self.lineMultiplier;
+    [self.intervalTimer invalidate];
+    self.intervalTimer = nil;
+    
+      [self intervalTimer:intervalValue];
+    self.currentInterval = self.lineMultiplier;
+  }
+  
+
+
+  
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -141,6 +155,10 @@
     [self setUpAVAudioPlayerWithFileName:song.fileName];
     [self.audioPlayer play];
     CGFloat intervalValue = (240.0/song.bpm) * self.lineMultiplier;
+  
+  self.BPM = song.bpm;
+  self.currentInterval = self.lineMultiplier;
+  
     NSLog(@"lineMultiplier: %lu",self.lineMultiplier);
     NSLog(@"BPM: %lu", song.bpm);
     NSLog(@"intervalValue: %f",intervalValue);
