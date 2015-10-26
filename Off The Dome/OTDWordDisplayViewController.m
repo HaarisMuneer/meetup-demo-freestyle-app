@@ -13,6 +13,11 @@
 
 @property (nonatomic)NSUInteger BPM;
 @property (nonatomic)NSUInteger currentInterval;
+@property (nonatomic, strong)NSDate *timeAtLastLabelUpdate;
+@property (nonatomic, strong) NSDate *timeAtSongPause;
+@property (nonatomic)NSTimeInterval timeBetweenPauseAndLastUpdate;
+@property (nonatomic, strong) NSTimer *pausedTimer;
+@property (nonatomic)CGFloat pauseTime;
 
 @end
 
@@ -46,10 +51,12 @@
 }
 
 - (NSTimer*)intervalTimer: (CGFloat)delayInterval{
+
     
     self.intervalTimer = [NSTimer scheduledTimerWithTimeInterval:delayInterval target:self selector:@selector(updateRandomWordLabel) userInfo:nil repeats:YES];
     return self.intervalTimer;
 }
+
 
 - (IBAction)stopIntervalTapped:(id)sender
 {
@@ -94,13 +101,14 @@
       CGFloat intervalValue = (240.0/self.BPM) * self.lineMultiplier;
     [self.intervalTimer invalidate];
     self.intervalTimer = nil;
+      
     
     [self intervalTimer:intervalValue];
     self.currentInterval = self.lineMultiplier;
+      NSLog(@"%@", self.timeAtLastLabelUpdate);
+      
   }
-
-
-  
+  self.timeAtLastLabelUpdate = [NSDate date];
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -128,18 +136,35 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+  
+
     OTDSong *song = self.songs[indexPath.row];
-    
+  CGFloat intervalValue = (240.0/song.bpm) * self.lineMultiplier;
+
+  NSLog(@"intervalValue = %f", intervalValue);
+  
     if ([[self.audioPlayer.url absoluteString] containsString:song.fileName]) {
         NSLog(@"Song clicked is song that is already playing");
         if (self.audioPlayer.isPlaying) {
             NSLog(@"This pauses the currently playing song");
             [self.audioPlayer pause];
+          [self.intervalTimer invalidate];
+          self.intervalTimer = nil;
+          self.timeAtSongPause = [NSDate date];
+          
+
+          self.timeBetweenPauseAndLastUpdate = [self.timeAtLastLabelUpdate timeIntervalSinceDate:self.timeAtSongPause] * -1;
+          
+          NSLog(@"timeBetweenPauseAndLastUpdate: %f",self.timeBetweenPauseAndLastUpdate) ;
+          self.pauseTime = intervalValue - self.timeBetweenPauseAndLastUpdate;
+          NSLog(@"pauseTime: %f",self.pauseTime) ;
+
+
         }
         else {
             NSLog(@"This plays the paused song");
             [self.audioPlayer play];
+            [self pausedTimer:self.pauseTime];
         }
     }
     else {
@@ -153,17 +178,40 @@
         
         [self setUpAVAudioPlayerWithFileName:song.fileName];
         [self.audioPlayer play];
-        CGFloat intervalValue = (240.0/song.bpm) * self.lineMultiplier;
       
         self.BPM = song.bpm;
         self.currentInterval = self.lineMultiplier;
         [self intervalTimer:intervalValue];
         [self updateRandomWordLabel];
     }
+
+  NSLog(@"pauseTime: %f", self.pauseTime);
+  NSLog(@"timeAtSongPause: %@", self.timeAtSongPause);
+  NSLog(@"timeAtLastLabelUpdate: %@", self.timeAtLastLabelUpdate);
+  NSLog(@"-----------------------");
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 70;
+}
+
+- (NSTimer*)pausedTimer: (CGFloat)pausedDelayInterval{
+
+  NSLog(@"PausedTimer");
+
+  self.pausedTimer = [NSTimer scheduledTimerWithTimeInterval:pausedDelayInterval target:self selector:@selector(pausedLabelUpdate) userInfo:nil repeats:NO];
+  return self.pausedTimer;
+}
+-(void)pausedLabelUpdate
+{
+  [self updateRandomWordLabel];
+
+  CGFloat intervalValue = (240.0/self.BPM) * self.lineMultiplier;
+  
+  NSLog(@"pause label update");
+//  self.currentInterval = self.lineMultiplier;
+  [self intervalTimer:intervalValue];
+  
 }
 
 - (void)setUpAVAudioPlayerWithFileName:(NSString *)fileName
