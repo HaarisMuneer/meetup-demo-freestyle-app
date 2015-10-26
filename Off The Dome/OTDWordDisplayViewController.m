@@ -101,6 +101,7 @@
       CGFloat intervalValue = (240.0/self.BPM) * self.lineMultiplier;
     [self.intervalTimer invalidate];
     self.intervalTimer = nil;
+
       
     
     [self intervalTimer:intervalValue];
@@ -163,6 +164,8 @@
         }
         else {
             NSLog(@"This plays the paused song");
+          self.currentInterval = self.lineMultiplier;
+
             [self.audioPlayer play];
             [self pausedTimer:self.pauseTime];
         }
@@ -205,11 +208,13 @@
 -(void)pausedLabelUpdate
 {
   [self updateRandomWordLabel];
+  self.lineMultiplier = self.currentInterval;
 
   CGFloat intervalValue = (240.0/self.BPM) * self.lineMultiplier;
   
   NSLog(@"pause label update");
 //  self.currentInterval = self.lineMultiplier;
+
   [self intervalTimer:intervalValue];
   
 }
