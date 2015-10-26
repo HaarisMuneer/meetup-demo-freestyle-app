@@ -45,11 +45,6 @@
     self.songs = @[flavaInYaEar, work, alienFamily];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (NSTimer*)intervalTimer: (CGFloat)delayInterval{
     
     self.intervalTimer = [NSTimer scheduledTimerWithTimeInterval:delayInterval target:self selector:@selector(updateRandomWordLabel) userInfo:nil repeats:YES];
@@ -63,11 +58,11 @@
         self.intervalTimer = nil;
     }
     [self.audioPlayer stop];
+    self.audioPlayer = [[AVAudioPlayer alloc]initWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"" withExtension:@"mp3"] error:nil];
 }
 
 - (IBAction)segmentTapped:(id)sender {
   //lines are placeholder values until calculation for BPM are input
-    NSLog(@"selectedSegmentIndex: %lu", self.segmentControl.selectedSegmentIndex);
     switch (self.segmentControl.selectedSegmentIndex) {
         case 0:
             self.lineMultiplier = 2;
@@ -95,15 +90,14 @@
     self.wordUtterance = [AVSpeechUtterance speechUtteranceWithString:self.randomWordToIncorporateLabel.text];
     [self.synthesizer speakUtterance:self.wordUtterance];
   
-  if (self.currentInterval != self.lineMultiplier) {
+    if (self.currentInterval != self.lineMultiplier) {
       CGFloat intervalValue = (240.0/self.BPM) * self.lineMultiplier;
     [self.intervalTimer invalidate];
     self.intervalTimer = nil;
     
-      [self intervalTimer:intervalValue];
+    [self intervalTimer:intervalValue];
     self.currentInterval = self.lineMultiplier;
   }
-  
 
 
   
@@ -138,32 +132,34 @@
     OTDSong *song = self.songs[indexPath.row];
     
     if ([[self.audioPlayer.url absoluteString] containsString:song.fileName]) {
+        NSLog(@"Song clicked is song that is already playing");
         if (self.audioPlayer.isPlaying) {
+            NSLog(@"This pauses the currently playing song");
             [self.audioPlayer pause];
         }
         else {
+            NSLog(@"This plays the paused song");
             [self.audioPlayer play];
         }
     }
-  
-    if (self.intervalTimer) {
-        [self.intervalTimer invalidate];
-        self.intervalTimer = nil;
+    else {
+        NSLog(@"Song clicked is a song that is not already playing");
+
+        if (self.intervalTimer) {
+            [self.intervalTimer invalidate];
+            self.intervalTimer = nil;
+        }
+      
+        
+        [self setUpAVAudioPlayerWithFileName:song.fileName];
+        [self.audioPlayer play];
+        CGFloat intervalValue = (240.0/song.bpm) * self.lineMultiplier;
+      
+        self.BPM = song.bpm;
+        self.currentInterval = self.lineMultiplier;
+        [self intervalTimer:intervalValue];
+        [self updateRandomWordLabel];
     }
-  
-    
-    [self setUpAVAudioPlayerWithFileName:song.fileName];
-    [self.audioPlayer play];
-    CGFloat intervalValue = (240.0/song.bpm) * self.lineMultiplier;
-  
-  self.BPM = song.bpm;
-  self.currentInterval = self.lineMultiplier;
-  
-    NSLog(@"lineMultiplier: %lu",self.lineMultiplier);
-    NSLog(@"BPM: %lu", song.bpm);
-    NSLog(@"intervalValue: %f",intervalValue);
-    [self intervalTimer:intervalValue];
-    [self updateRandomWordLabel];
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -174,7 +170,6 @@
 {
     NSURL *url = [[NSBundle mainBundle] URLForResource:fileName withExtension:@"mp3"];
     NSError *error = nil;
-//    NSLog(@"%@", url);
     self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
     if (error)
     {
@@ -191,12 +186,12 @@
 }
 
 -(void)setStyle {
-  UIColor *darkMainColor = [UIColor colorWithRed:0.216 green:0.243 blue:0.251 alpha:1];
-  UIColor *boldBlue = [UIColor colorWithRed:0.196 green:0.6 blue:0.733 alpha:1];
-  UIColor *brightOrange = [UIColor colorWithRed:1 green:0.6 blue:0 alpha:1];
-  UIColor *darkGray = [UIColor colorWithRed:0.259 green:0.259 blue:0.259 alpha:1];
-  UIColor *lightGray = [UIColor colorWithRed:0.737 green:0.737 blue:0.737 alpha:1];
-  UIColor *lighterGray = [UIColor colorWithRed:0.957 green:0.957 blue:0.957 alpha:1];
+    UIColor *darkMainColor = [UIColor colorWithRed:0.216 green:0.243 blue:0.251 alpha:1];
+    UIColor *boldBlue = [UIColor colorWithRed:0.196 green:0.6 blue:0.733 alpha:1];
+    UIColor *brightOrange = [UIColor colorWithRed:1 green:0.6 blue:0 alpha:1];
+    UIColor *darkGray = [UIColor colorWithRed:0.259 green:0.259 blue:0.259 alpha:1];
+    UIColor *lightGray = [UIColor colorWithRed:0.737 green:0.737 blue:0.737 alpha:1];
+    UIColor *lighterGray = [UIColor colorWithRed:0.957 green:0.957 blue:0.957 alpha:1];
   
   
   
@@ -204,19 +199,19 @@
     self.segmentControl.tintColor = boldBlue;
     self.songTableView.backgroundColor = [UIColor clearColor];
     self.songTableView.layer.borderWidth = 2.0;
-  self.songTableView.layer.borderColor = darkGray.CGColor;
-  self.view.backgroundColor = lighterGray;
+    self.songTableView.layer.borderColor = darkGray.CGColor;
+    self.view.backgroundColor = lighterGray;
   
 //  self.view.backgroundColor = [UIColor colorWithRe d:0.965 green:1 blue:0.973 alpha:1];
-  self.randomWordToIncorporateLabel.textColor = brightOrange;
+    self.randomWordToIncorporateLabel.textColor = brightOrange;
   
   
   
 //  self.stopButton.layer.borderWidth = 1.0;
 //  self.stopButton.layer.borderColor = darkGray.CGColor;
-  [self.stopButton setTitleColor:boldBlue forState:UIControlStateNormal];
-  self.wantANewWordLabel.textColor = darkGray;
-  self.linesLabel.textColor = darkGray;
+    [self.stopButton setTitleColor:boldBlue forState:UIControlStateNormal];
+    self.wantANewWordLabel.textColor = darkGray;
+    self.linesLabel.textColor = darkGray;
   
   
   
