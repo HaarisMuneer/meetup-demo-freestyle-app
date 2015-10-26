@@ -29,8 +29,8 @@
   
 
     self.lineMultiplier = 2;
-    self.randomWordToIncorporateLabel.text = @"Off The Dome!";
-    self.randomWordToIncorporateLabel.font = [UIFont fontWithName:@"LemonMilk" size:50];
+    self.randomWordToIncorporateLabel.text = @"Spit!";
+    self.randomWordToIncorporateLabel.font = [UIFont fontWithName:@"LemonMilk" size:80];
     self.synthesizer = [[AVSpeechSynthesizer alloc] init];
     [self setStyle];
   
