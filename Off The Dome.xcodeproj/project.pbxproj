@@ -19,6 +19,7 @@
 		2B4152181BD7C805003D762E /* flava.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2B4152151BD7C805003D762E /* flava.mp3 */; };
 		2B4152191BD7C805003D762E /* work.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2B4152161BD7C805003D762E /* work.mp3 */; };
 		2B7BCB8D1BDAB76C0082AEA6 /* LemonMilk.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2B7BCB8C1BDAB76C0082AEA6 /* LemonMilk.otf */; settings = {ASSET_TAGS = (); }; };
+		2BE7A9EE1BF240CF005511C5 /* OTDConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE7A9ED1BF240CF005511C5 /* OTDConstants.m */; settings = {ASSET_TAGS = (); }; };
 		E2981FFA1BD1775F008F420B /* wordlist.txt in Resources */ = {isa = PBXBuildFile; fileRef = E2981FF91BD1775F008F420B /* wordlist.txt */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,8 @@
 		2B4152151BD7C805003D762E /* flava.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = flava.mp3; sourceTree = "<group>"; };
 		2B4152161BD7C805003D762E /* work.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = work.mp3; sourceTree = "<group>"; };
 		2B7BCB8C1BDAB76C0082AEA6 /* LemonMilk.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LemonMilk.otf; sourceTree = "<group>"; };
+		2BE7A9EC1BF240CF005511C5 /* OTDConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTDConstants.h; sourceTree = "<group>"; };
+		2BE7A9ED1BF240CF005511C5 /* OTDConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTDConstants.m; sourceTree = "<group>"; };
 		E2981FF91BD1775F008F420B /* wordlist.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = wordlist.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,6 +81,8 @@
 				2B4152151BD7C805003D762E /* flava.mp3 */,
 				2B4152161BD7C805003D762E /* work.mp3 */,
 				2B7BCB8C1BDAB76C0082AEA6 /* LemonMilk.otf */,
+				2BE7A9EC1BF240CF005511C5 /* OTDConstants.h */,
+				2BE7A9ED1BF240CF005511C5 /* OTDConstants.m */,
 				2B09A8451BC5C49800804E82 /* AppDelegate.h */,
 				2B09A8461BC5C49800804E82 /* AppDelegate.m */,
 				2B09A8481BC5C49800804E82 /* ViewController.h */,
@@ -181,6 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B09A84A1BC5C49800804E82 /* ViewController.m in Sources */,
+				2BE7A9EE1BF240CF005511C5 /* OTDConstants.m in Sources */,
 				2B09A8471BC5C49800804E82 /* AppDelegate.m in Sources */,
 				2B3EA62A1BD5303D008368E7 /* OTDWordDisplayViewController.m in Sources */,
 				2B3EA6271BD52799008368E7 /* OTDSong.m in Sources */,
