@@ -20,6 +20,7 @@
 
 @property (nonatomic, strong) NSArray *songs;
 @property (nonatomic, strong) AVAudioPlayer *audioPlayer;
+@property (nonatomic, strong) AVPlayer *scPlayer;
 
 @property (weak, nonatomic) IBOutlet UILabel *randomWordToIncorporateLabel;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentControl;

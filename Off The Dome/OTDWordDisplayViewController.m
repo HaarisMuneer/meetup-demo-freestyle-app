@@ -42,7 +42,7 @@
         [self.wordsToIncorporateArray addObject:line];
     }
   
-    NSLog(@"%@",self.wordsToIncorporateArray);
+    //NSLog(@"%@",self.wordsToIncorporateArray);
     
     OTDSong *alienFamily = [[OTDSong alloc]initWithTitle:@"Alien Family (Instrumental)" artist:@"J Dilla" fileName:@"alien" bpm:85];
     OTDSong *work = [[OTDSong alloc]initWithTitle:@"Work (Instrumental)" artist:@"Gang Starr" fileName:@"work" bpm:92];
@@ -188,10 +188,10 @@
         [self updateRandomWordLabel];
     }
 
-  NSLog(@"pauseTime: %f", self.pauseTime);
-  NSLog(@"timeAtSongPause: %@", self.timeAtSongPause);
-  NSLog(@"timeAtLastLabelUpdate: %@", self.timeAtLastLabelUpdate);
-  NSLog(@"-----------------------");
+//  NSLog(@"pauseTime: %f", self.pauseTime);
+//  NSLog(@"timeAtSongPause: %@", self.timeAtSongPause);
+//  NSLog(@"timeAtLastLabelUpdate: %@", self.timeAtLastLabelUpdate);
+//  NSLog(@"-----------------------");
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -231,6 +231,36 @@
     } else {
         [self.audioPlayer prepareToPlay];
     }
+}
+
+- (IBAction)scButtonTapped:(id)sender {
+    [self setUpAVPlayerAndPlay];
+}
+
+- (void) setUpAVPlayerAndPlay {
+    NSURL *scSearch = [NSURL URLWithString:@"https://api.soundcloud.com/playlists/76553025?client_id=d52c6078d33b0753271d9832dc819ce2"];
+    NSURLRequest *scRequest = [NSURLRequest requestWithURL:scSearch];
+
+    NSURLSession *session = [NSURLSession sharedSession];
+    
+    NSURLSessionDataTask *scData = [session dataTaskWithRequest:scRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+
+        NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        NSArray *tracks = responseDictionary[@"tracks"];
+        for (NSDictionary *trackDict in tracks) {
+            NSLog(@"%@", trackDict[@"title"]);
+        }
+//        NSString *streamString = [NSString stringWithFormat:@"%@?client_id=%@", songDictionary[@"stream_url"], @"d52c6078d33b0753271d9832dc819ce2"];
+//        NSURL *streamURL = [NSURL URLWithString:streamString];
+//
+//        NSLog(@"%@", streamURL);
+//
+//        self.scPlayer = [AVPlayer playerWithURL:streamURL];
+//        [self.scPlayer play];
+        
+    }];
+    
+    [scData resume];
 }
 
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
